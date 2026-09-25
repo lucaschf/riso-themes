@@ -7,7 +7,7 @@
 const vscode = require("vscode");
 const palette = require("./palette.json");
 const { RainbowIdentifiers } = require("./rainbowIdentifiers");
-const { registerMenu } = require("./menu");
+const { registerMenu, pickInk } = require("./menu");
 const log = require("./log");
 
 const SECTION = "riso";
@@ -59,11 +59,36 @@ function overridesFor(theme, { brackets, indentGuides }) {
   return out;
 }
 
+function installedThemeLabels() {
+  const labels = new Set();
+  for (const ext of vscode.extensions.all) {
+    for (const theme of ext.packageJSON?.contributes?.themes ?? []) {
+      if (theme.label) labels.add(theme.label);
+      if (theme.id) labels.add(theme.id);
+    }
+  }
+  return labels;
+}
+
 async function sync() {
   const options = readOptions();
   const workbench = vscode.workspace.getConfiguration("workbench");
   const current = workbench.inspect("colorCustomizations")?.globalValue ?? {};
   const next = { ...current };
+
+  // Drop scopes left behind for themes that no longer exist (a renamed or
+  // removed theme), but only when they hold nothing but keys this extension
+  // writes — a scope with anything of the user's in it is left alone.
+  const installed = installedThemeLabels();
+  for (const key of Object.keys(next)) {
+    const label = /^\[([^\]*]+)\]$/.exec(key)?.[1];
+    const scope = next[key];
+    if (!label || installed.has(label) || typeof scope !== "object") continue;
+    if (Object.keys(scope).every((k) => MANAGED_KEYS.includes(k))) {
+      delete next[key];
+      log.info(`sync: removed leftover colors for missing theme "${label}"`);
+    }
+  }
 
   for (const [label, theme] of Object.entries(palette.themes)) {
     const key = `[${label}]`;
@@ -107,40 +132,6 @@ async function toggle(context, setting, on) {
   vscode.window.setStatusBarMessage(`Riso: ${setting} → ${next}`, 2500);
 }
 
-async function setWorkspaceTheme() {
-  if (!vscode.workspace.workspaceFolders?.length) {
-    vscode.window.showWarningMessage("Riso: open a folder or workspace first.");
-    return;
-  }
-  const workbench = vscode.workspace.getConfiguration("workbench");
-  const inspected = workbench.inspect("colorTheme");
-  const workspaceTheme = inspected?.workspaceValue;
-
-  const GLOBAL = "$(globe) Use the global theme";
-  const items = [
-    ...Object.keys(palette.themes).map((label) => ({
-      label,
-      description: label === workspaceTheme ? "current in this workspace" : undefined,
-    })),
-    { label: "", kind: vscode.QuickPickItemKind.Separator },
-    { label: GLOBAL, description: inspected?.globalValue ? `(${inspected.globalValue})` : undefined },
-  ];
-
-  // Live preview while moving through the list; restored on cancel.
-  const picked = await vscode.window.showQuickPick(items, {
-    title: "Riso theme for this workspace",
-    placeHolder: "Pick an ink for this project",
-    onDidSelectItem: (item) => {
-      if (palette.themes[item.label]) {
-        workbench.update("colorTheme", item.label, vscode.ConfigurationTarget.Workspace);
-      }
-    },
-  });
-
-  const final = !picked ? workspaceTheme : picked.label === GLOBAL ? undefined : picked.label;
-  await workbench.update("colorTheme", final, vscode.ConfigurationTarget.Workspace);
-}
-
 function activate(context) {
   context.subscriptions.push(
     vscode.workspace.onDidChangeConfiguration((e) => {
@@ -152,7 +143,9 @@ function activate(context) {
     vscode.commands.registerCommand("riso.toggleIndentGuides", () =>
       toggle(context, "indentGuides", "rainbow"),
     ),
-    vscode.commands.registerCommand("riso.setWorkspaceTheme", setWorkspaceTheme),
+    vscode.commands.registerCommand("riso.setWorkspaceTheme", () =>
+      pickInk(vscode.ConfigurationTarget.Workspace),
+    ),
     vscode.commands.registerCommand("riso.useGlobalTheme", () =>
       vscode.workspace
         .getConfiguration("workbench")

@@ -57,30 +57,58 @@ async function setTheme(label, target = themeTarget()) {
 
 // -- Pickers ---------------------------------------------------------------------
 
-// Pick an ink, keeping the current surface; previews while moving.
-async function pickInk() {
-  const info = themeInfo();
+const hasWorkspace = () => Boolean(vscode.workspace.workspaceFolders?.length);
+
+// The theme set at one scope (undefined when that scope doesn't set one).
+const themeAt = (target) => {
+  const inspected = workbench().inspect("colorTheme");
+  return target === Workspace ? inspected?.workspaceValue : inspected?.globalValue;
+};
+
+// Pick an ink for one scope, keeping the surface (normal / dimmed) that is on
+// screen; previews while moving, restores on Esc. For this project, the list
+// also offers going back to the theme of all projects.
+async function pickInk(target) {
+  if (target === Workspace && !hasWorkspace()) {
+    vscode.window.showWarningMessage("Riso: open a folder to give it its own theme.");
+    return;
+  }
+  const before = themeAt(target);
+  const info = themeInfo(before) ?? themeInfo();
   const variant = info?.variant ?? "normal";
-  const target = themeTarget();
-  const before = currentTheme();
+  const FOLLOW = "follow";
+
   const items = baseThemes().map((base) => ({
     label: shortName(base),
     base,
-    description: base === info?.base ? "current" : undefined,
+    description: before && base === themeInfo(before)?.base ? "current" : undefined,
   }));
+  if (target === Workspace) {
+    const globalTheme = themeAt(Global);
+    items.push(
+      { label: "", kind: vscode.QuickPickItemKind.Separator },
+      {
+        label: "$(globe) Follow all projects",
+        id: FOLLOW,
+        description: [globalTheme && shortName(globalTheme), before ? undefined : "current"].filter(Boolean).join(" · "),
+      },
+    );
+  }
+  const valueOf = (item) => (item.id === FOLLOW ? undefined : labelFor(item.base, variant));
+
   const qp = vscode.window.createQuickPick();
-  qp.title = `Theme ${target === Workspace ? "for this workspace" : "(global)"}`;
+  qp.title = target === Workspace ? "Theme · this project" : "Theme · all projects";
   qp.placeholder = "Pick an ink";
   qp.items = items;
-  qp.activeItems = items.filter((i) => i.base === info?.base);
-  qp.onDidChangeActive(([item]) => item && setTheme(labelFor(item.base, variant), target));
+  qp.activeItems = items.filter((i) => (before ? i.base === info?.base : i.id === FOLLOW));
+  qp.onDidChangeActive(([item]) => item && setTheme(valueOf(item), target));
   const picked = await new Promise((resolve) => {
     qp.onDidAccept(() => resolve(qp.selectedItems[0]));
     qp.onDidHide(() => resolve(undefined));
     qp.show();
   });
   qp.dispose();
-  await setTheme(picked ? labelFor(picked.base, variant) : before, target);
+  await setTheme(picked ? valueOf(picked) : before, target);
 }
 
 async function toggleDimmed() {
@@ -100,6 +128,21 @@ async function pickMode(setting, title) {
     { title, placeHolder: modeLabel(current) },
   );
   if (picked) await cfg.update(setting, picked.id, Global);
+}
+
+// VS Code's own editor.guides.bracketPairs: off → active pair only → all pairs.
+const PAIR_GUIDES = [
+  { value: false, label: "Off" },
+  { value: "active", label: "Active pair" },
+  { value: true, label: "All pairs" },
+];
+const editorGuides = () => vscode.workspace.getConfiguration("editor.guides");
+const pairGuidesIndex = () => Math.max(0, PAIR_GUIDES.findIndex((g) => g.value === editorGuides().get("bracketPairs")));
+const pairGuidesLabel = () => PAIR_GUIDES[pairGuidesIndex()].label;
+
+async function cyclePairGuides() {
+  const next = PAIR_GUIDES[(pairGuidesIndex() + 1) % PAIR_GUIDES.length];
+  await editorGuides().update("bracketPairs", next.value, Global);
 }
 
 async function pickKinds() {
@@ -128,29 +171,41 @@ function menuItems() {
     .join(", ");
   const sep = (label) => ({ label, kind: vscode.QuickPickItemKind.Separator });
 
+  const globalTheme = inspected?.globalValue;
+  const projectTheme = inspected?.workspaceValue;
+  const nameOf = (label) => (palette.themes[label] ? shortName(label) : `${label} (not Riso)`);
+
   return [
     sep("Theme"),
+    ...(hasWorkspace()
+      ? [{
+          id: "project",
+          label: "$(root-folder) Theme · this project",
+          description: projectTheme ? nameOf(projectTheme) : "follows all projects",
+          detail: "Its own ink for this folder, like Peacock (saved in .vscode/settings.json)",
+        }]
+      : []),
     {
-      id: "ink",
-      label: "$(symbol-color) Theme",
-      description: info ? shortName(info.base) : `${currentTheme()} (not Riso)`,
-      detail: themeTarget() === Workspace ? "Set for this workspace" : "Global",
+      id: "global",
+      label: "$(globe) Theme · all projects",
+      description: globalTheme ? nameOf(globalTheme) : "—",
+      detail: projectTheme ? "Overridden in this project" : undefined,
     },
     {
       id: "dimmed",
       label: "$(color-mode) Background",
       description: info ? (info.variant === "dimmed" ? "Dimmed" : "Normal") : "—",
-      detail: "Dimmed lifts the paper a step for less contrast",
-    },
-    {
-      id: "workspace",
-      label: "$(root-folder) This workspace",
-      description: inspected?.workspaceValue ? shortName(inspected.workspaceValue) : "follows global",
-      detail: "Give this project its own ink",
+      detail: `Dimmed lifts the paper a notch · applies to ${themeTarget() === Workspace ? "this project" : "all projects"}`,
     },
     sep("Code"),
     { id: "brackets", label: "$(bracket) Brackets", description: modeLabel(cfg.get("brackets")) },
     { id: "indent", label: "$(list-tree) Indent guides", description: modeLabel(cfg.get("indentGuides")) },
+    {
+      id: "pairGuides",
+      label: "$(debug-line-by-line) Bracket pair guides",
+      description: pairGuidesLabel(),
+      detail: "Lines joining each bracket pair, in its level's color",
+    },
     { id: "rid", label: "$(symbol-variable) Color by name", description: rid.get("enabled") ? "On" : "Off" },
     { id: "kinds", label: "$(checklist) Colored by name", description: kindsLabel || "nothing" },
     sep(""),
@@ -167,9 +222,10 @@ async function run(id) {
   const cfg = vscode.workspace.getConfiguration(SECTION);
   const rid = vscode.workspace.getConfiguration(`${SECTION}.rainbowIdentifiers`);
   switch (id) {
-    case "ink": return pickInk();
+    case "project": return pickInk(Workspace);
+    case "global": return pickInk(Global);
     case "dimmed": return toggleDimmed();
-    case "workspace": return vscode.commands.executeCommand("riso.setWorkspaceTheme");
+    case "pairGuides": return cyclePairGuides();
     case "brackets": return pickMode("brackets", "Brackets");
     case "indent": return pickMode("indentGuides", "Indent guides");
     case "rid": return rid.update("enabled", !rid.get("enabled"), Global);
@@ -185,7 +241,7 @@ async function showMenu(activeId) {
   qp.title = "Riso";
   qp.placeholder = "Pick an option to change it";
   qp.items = menuItems();
-  qp.activeItems = qp.items.filter((i) => i.id === (activeId ?? "ink"));
+  qp.activeItems = qp.items.filter((i) => i.id === (activeId ?? (hasWorkspace() ? "project" : "global")));
   const picked = await new Promise((resolve) => {
     qp.onDidAccept(() => resolve(qp.selectedItems[0]));
     qp.onDidHide(() => resolve(undefined));
@@ -209,8 +265,9 @@ function registerStatusBar(context) {
     const info = themeInfo();
     const show = info && vscode.workspace.getConfiguration(SECTION).get("statusBarItem");
     if (!show) return item.hide();
-    item.text = `$(symbol-color) ${shortName(info.base)}${info.variant === "dimmed" ? " · dim" : ""}`;
-    item.tooltip = `${currentTheme()} — Riso options`;
+    const own = themeAt(Workspace) !== undefined;
+    item.text = `$(${own ? "root-folder" : "symbol-color"}) ${shortName(info.base)}${info.variant === "dimmed" ? " · dim" : ""}`;
+    item.tooltip = `${currentTheme()}${own ? " — this project's theme" : ""} · Riso options`;
     item.show();
   };
   context.subscriptions.push(
@@ -230,4 +287,4 @@ function registerMenu(context) {
   registerStatusBar(context);
 }
 
-module.exports = { registerMenu };
+module.exports = { registerMenu, pickInk };

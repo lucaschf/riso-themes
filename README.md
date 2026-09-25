@@ -35,12 +35,14 @@ One color per nesting level, using VS Code's native bracket pair colorization.
 | `riso.indentGuides` | `plain` (default), `rainbow`, `duotone` |
 
 Commands: **Riso: Toggle Rainbow Brackets**, **Riso: Toggle Rainbow Indent Guides**.
-Turn on `editor.guides.bracketPairs` to also get colored bracket pair guides.
+*Bracket pair guides* in the menu cycles VS Code's `editor.guides.bracketPairs`
+(off → active pair → all pairs); the guides take their level's color.
 
 Non-default modes are written as theme-scoped entries (`"[Riso Touge]": {...}`)
 in the user `workbench.colorCustomizations`; only the bracket / indent-guide keys
-are managed. Set both options back to their defaults before uninstalling to
-remove them.
+are managed. Scopes left behind for themes that no longer exist are removed when
+they hold only those keys. Set both options back to their defaults before
+uninstalling to remove them.
 
 ## Color by name
 
@@ -61,10 +63,14 @@ to the **Riso** channel in the Output panel.
 
 ## Per-project theme
 
-**Riso: Set Theme for This Workspace…** writes `workbench.colorTheme` to the
-project's `.vscode/settings.json` (with live preview while picking);
-**Riso: Use Global Theme in This Workspace** removes it. Works alongside
-Peacock, which paints the title / activity / status bars on top.
+Like Peacock, but with the whole theme: in **Riso: Options…**, *Theme · this
+project* gives the open folder its own ink (saved as `workbench.colorTheme` in
+its `.vscode/settings.json`), and *Follow all projects* removes it; *Theme · all
+projects* sets the global one. Both preview while you move through the list and
+keep the current surface (normal / dimmed). The status bar button shows a folder
+icon when the project has its own theme. Also as commands: **Riso: Set Theme for
+This Workspace…** and **Riso: Use Global Theme in This Workspace**. Works
+alongside Peacock, which paints the title / activity / status bars on top.
 
 ## Development
 
