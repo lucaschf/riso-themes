@@ -232,7 +232,7 @@ async function run(id) {
     case "kinds": return pickKinds();
     case "statusbar": return cfg.update("statusBarItem", !cfg.get("statusBarItem"), Global);
     case "settings":
-      return vscode.commands.executeCommand("workbench.action.openSettings", "@ext:lucaschf.riso-themes");
+      return vscode.commands.executeCommand("workbench.action.openSettings", "@ext:lucascristovam.riso-themes");
   }
 }
 
