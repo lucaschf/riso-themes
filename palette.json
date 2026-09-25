@@ -1,0 +1,516 @@
+{
+  "identifiers": [
+    "#E07A62",
+    "#DBB85E",
+    "#A48BC8",
+    "#5FAAAA",
+    "#DB8A55",
+    "#6E9CCB",
+    "#6FAE7E",
+    "#EAA493",
+    "#E6CE8D",
+    "#C2B0DA",
+    "#93C7C7",
+    "#E7AF8A",
+    "#9EBDDD",
+    "#9DC9A7"
+  ],
+  "themes": {
+    "Riso Touge": {
+      "ink": "touge",
+      "base": "Riso Touge",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#E07A62",
+          "#6E9CCB",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#E07A62",
+          "#D9C4A0",
+          "#EAA493",
+          "#EAD9BC",
+          "#E07A62",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Touge Dimmed": {
+      "ink": "touge",
+      "base": "Riso Touge",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#E07A62",
+          "#6E9CCB",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#E07A62",
+          "#D9C4A0",
+          "#EAA493",
+          "#EAD9BC",
+          "#E07A62",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Green": {
+      "ink": "green",
+      "base": "Riso Green",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#E07A62",
+          "#6FAE7E",
+          "#DB8A55",
+          "#6E9CCB"
+        ],
+        "duotone": [
+          "#6FAE7E",
+          "#D9C4A0",
+          "#9DC9A7",
+          "#EAD9BC",
+          "#6FAE7E",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Green Dimmed": {
+      "ink": "green",
+      "base": "Riso Green",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#E07A62",
+          "#6FAE7E",
+          "#DB8A55",
+          "#6E9CCB"
+        ],
+        "duotone": [
+          "#6FAE7E",
+          "#D9C4A0",
+          "#9DC9A7",
+          "#EAD9BC",
+          "#6FAE7E",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Blue": {
+      "ink": "blue",
+      "base": "Riso Blue",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#6E9CCB",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#6E9CCB",
+          "#D9C4A0",
+          "#9EBDDD",
+          "#EAD9BC",
+          "#6E9CCB",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Blue Dimmed": {
+      "ink": "blue",
+      "base": "Riso Blue",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#6E9CCB",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#6E9CCB",
+          "#D9C4A0",
+          "#9EBDDD",
+          "#EAD9BC",
+          "#6E9CCB",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Purple": {
+      "ink": "purple",
+      "base": "Riso Purple",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#6E9CCB",
+          "#5FAAAA",
+          "#A48BC8",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#A48BC8",
+          "#D9C4A0",
+          "#C2B0DA",
+          "#EAD9BC",
+          "#A48BC8",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Purple Dimmed": {
+      "ink": "purple",
+      "base": "Riso Purple",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#6E9CCB",
+          "#5FAAAA",
+          "#A48BC8",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#A48BC8",
+          "#D9C4A0",
+          "#C2B0DA",
+          "#EAD9BC",
+          "#A48BC8",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Grey": {
+      "ink": "grey",
+      "base": "Riso Grey",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#9A9E96",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#9A9E96",
+          "#D9C4A0",
+          "#BABCB6",
+          "#EAD9BC",
+          "#9A9E96",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Grey Dimmed": {
+      "ink": "grey",
+      "base": "Riso Grey",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#9A9E96",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#9A9E96",
+          "#D9C4A0",
+          "#BABCB6",
+          "#EAD9BC",
+          "#9A9E96",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Orange": {
+      "ink": "orange",
+      "base": "Riso Orange",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#DB8A55",
+          "#6E9CCB",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#DB8A55",
+          "#D9C4A0",
+          "#E7AF8A",
+          "#EAD9BC",
+          "#DB8A55",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Orange Dimmed": {
+      "ink": "orange",
+      "base": "Riso Orange",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#DB8A55",
+          "#6E9CCB",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#DB8A55",
+          "#D9C4A0",
+          "#E7AF8A",
+          "#EAD9BC",
+          "#DB8A55",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Teal": {
+      "ink": "teal",
+      "base": "Riso Teal",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#E07A62",
+          "#5FAAAA",
+          "#DB8A55",
+          "#6E9CCB"
+        ],
+        "duotone": [
+          "#5FAAAA",
+          "#D9C4A0",
+          "#93C7C7",
+          "#EAD9BC",
+          "#5FAAAA",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Teal Dimmed": {
+      "ink": "teal",
+      "base": "Riso Teal",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#E07A62",
+          "#5FAAAA",
+          "#DB8A55",
+          "#6E9CCB"
+        ],
+        "duotone": [
+          "#5FAAAA",
+          "#D9C4A0",
+          "#93C7C7",
+          "#EAD9BC",
+          "#5FAAAA",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    },
+    "Riso Mustard": {
+      "ink": "mustard",
+      "base": "Riso Mustard",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#6E9CCB",
+          "#A48BC8",
+          "#5FAAAA",
+          "#DBB85E",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#DBB85E",
+          "#D9C4A0",
+          "#E6CE8D",
+          "#EAD9BC",
+          "#DBB85E",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      }
+    },
+    "Riso Mustard Dimmed": {
+      "ink": "mustard",
+      "base": "Riso Mustard",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#6E9CCB",
+          "#A48BC8",
+          "#5FAAAA",
+          "#DBB85E",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#DBB85E",
+          "#D9C4A0",
+          "#E6CE8D",
+          "#EAD9BC",
+          "#DBB85E",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      }
+    }
+  }
+}

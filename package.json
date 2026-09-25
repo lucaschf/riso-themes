@@ -1,0 +1,259 @@
+{
+  "name": "riso-themes",
+  "displayName": "Riso Themes",
+  "description": "Dark themes printed like a risograph: one warm black paper, a cream second ink and a different ink per theme. Rainbow brackets, per-name identifier colors and dimmed variants.",
+  "version": "1.0.0",
+  "publisher": "lucaschf",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/preview.mjs"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Riso Touge",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-touge.json"
+      },
+      {
+        "label": "Riso Touge Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-touge-dimmed.json"
+      },
+      {
+        "label": "Riso Green",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-green.json"
+      },
+      {
+        "label": "Riso Green Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-green-dimmed.json"
+      },
+      {
+        "label": "Riso Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-blue.json"
+      },
+      {
+        "label": "Riso Blue Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-blue-dimmed.json"
+      },
+      {
+        "label": "Riso Purple",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-purple.json"
+      },
+      {
+        "label": "Riso Purple Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-purple-dimmed.json"
+      },
+      {
+        "label": "Riso Grey",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-grey.json"
+      },
+      {
+        "label": "Riso Grey Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-grey-dimmed.json"
+      },
+      {
+        "label": "Riso Orange",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-orange.json"
+      },
+      {
+        "label": "Riso Orange Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-orange-dimmed.json"
+      },
+      {
+        "label": "Riso Teal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-teal.json"
+      },
+      {
+        "label": "Riso Teal Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-teal-dimmed.json"
+      },
+      {
+        "label": "Riso Mustard",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-mustard.json"
+      },
+      {
+        "label": "Riso Mustard Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-mustard-dimmed.json"
+      }
+    ],
+    "configuration": {
+      "title": "Riso",
+      "properties": {
+        "riso.brackets": {
+          "type": "string",
+          "enum": [
+            "rainbow",
+            "duotone",
+            "plain"
+          ],
+          "enumDescriptions": [
+            "One color per nesting level, from the family's inks.",
+            "The print's two inks: the theme's ink and the cream, alternating.",
+            "No per-level color: every level in the punctuation tone."
+          ],
+          "default": "rainbow",
+          "scope": "application",
+          "markdownDescription": "Bracket colors per nesting level in the Riso themes. Also colors the bracket pair guides when `#editor.guides.bracketPairs#` is on.",
+          "order": 0
+        },
+        "riso.indentGuides": {
+          "type": "string",
+          "enum": [
+            "rainbow",
+            "duotone",
+            "plain"
+          ],
+          "enumDescriptions": [
+            "One color per nesting level, from the family's inks.",
+            "The print's two inks: the theme's ink and the cream, alternating.",
+            "No per-level color: every level in the punctuation tone."
+          ],
+          "default": "plain",
+          "scope": "application",
+          "markdownDescription": "Indent guide colors per nesting level in the Riso themes.",
+          "order": 1
+        },
+        "riso.rainbowIdentifiers.enabled": {
+          "type": "boolean",
+          "default": false,
+          "scope": "application",
+          "markdownDescription": "Give every parameter, local variable and class name its own color, derived from the name (like JetBrains' semantic highlighting). Needs a language with semantic tokens: TS/JS built in, Python via Pylance. Only under a Riso theme.",
+          "order": 2
+        },
+        "riso.rainbowIdentifiers.kinds": {
+          "type": "array",
+          "default": [
+            "parameter",
+            "variable",
+            "property",
+            "constant",
+            "class",
+            "interface",
+            "enum",
+            "type"
+          ],
+          "scope": "application",
+          "items": {
+            "type": "string",
+            "enum": [
+              "parameter",
+              "variable",
+              "property",
+              "constant",
+              "class",
+              "interface",
+              "enum",
+              "type",
+              "typeParameter",
+              "function",
+              "method"
+            ],
+            "enumDescriptions": [
+              "Parameters and keyword arguments",
+              "Local variables (globals keep the theme's color)",
+              "Attributes: class fields, self.x, obj.prop",
+              "Constants: UPPER_CASE / Final / const values and enum members",
+              "Classes (library classes included, built-ins excluded)",
+              "Interfaces",
+              "Enums",
+              "Type aliases",
+              "Type parameters (T, K, V…)",
+              "Functions (replaces the shared function color)",
+              "Methods (replaces the shared method color)"
+            ]
+          },
+          "uniqueItems": true,
+          "markdownDescription": "What gets its own color per name. Easier from **Riso: Options…** → *Colored by name*.",
+          "order": 3
+        },
+        "riso.statusBarItem": {
+          "type": "boolean",
+          "default": true,
+          "scope": "application",
+          "markdownDescription": "Show the Riso button in the status bar (opens **Riso: Options…**). Only under a Riso theme.",
+          "order": 4
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "riso.options",
+        "title": "Options…",
+        "category": "Riso",
+        "icon": "$(symbol-color)"
+      },
+      {
+        "command": "riso.toggleDimmed",
+        "title": "Toggle Dimmed Background",
+        "category": "Riso"
+      },
+      {
+        "command": "riso.toggleBrackets",
+        "title": "Toggle Rainbow Brackets",
+        "category": "Riso"
+      },
+      {
+        "command": "riso.toggleIndentGuides",
+        "title": "Toggle Rainbow Indent Guides",
+        "category": "Riso"
+      },
+      {
+        "command": "riso.setWorkspaceTheme",
+        "title": "Set Theme for This Workspace…",
+        "category": "Riso"
+      },
+      {
+        "command": "riso.useGlobalTheme",
+        "title": "Use Global Theme in This Workspace",
+        "category": "Riso"
+      },
+      {
+        "command": "riso.toggleRainbowIdentifiers",
+        "title": "Toggle Rainbow Identifiers",
+        "category": "Riso"
+      }
+    ]
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "riso",
+    "retro",
+    "rainbow brackets",
+    "semantic highlighting"
+  ],
+  "author": "Lucas Cristovam",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucaschf/riso-themes.git"
+  },
+  "homepage": "https://github.com/lucaschf/riso-themes#readme",
+  "bugs": {
+    "url": "https://github.com/lucaschf/riso-themes/issues"
+  }
+}
