@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check the extension scripts parse
+        run: for f in extension.js log.js menu.js rainbowIdentifiers.js; do node --check "$f"; done
+
+      - name: Build themes (fails on the contrast audit)
+        run: npm run build
+
+      - name: Check the generated files are committed
+        run: |
+          if ! git diff --exit-code -- themes package.json palette.json; then
+            echo "::error::Generated files are out of date — run 'npm run build' and commit the result."
+            exit 1
+          fi
+
+      - name: Package
+        run: npx --yes @vscode/vsce@4 package --out riso-themes.vsix
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: riso-themes-vsix
+          path: riso-themes.vsix

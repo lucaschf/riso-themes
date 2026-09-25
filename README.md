@@ -94,3 +94,22 @@ comments and docs, 3:1 for punctuation).
     npm run build
     npx @vscode/vsce package
     code --install-extension riso-themes-1.2.0.vsix
+
+## Releasing
+
+CI (`.github/workflows/ci.yml`) builds every push and pull request: the themes
+must pass the contrast audit, the generated files must be committed, and the
+packaged `.vsix` is kept as a build artifact.
+
+To release, bump `version` in `package.json`, add its section to
+`CHANGELOG.md`, commit, then push a matching tag:
+
+    git tag v1.3.0
+    git push origin v1.3.0
+
+`.github/workflows/release.yml` then publishes that version to the VS Code
+Marketplace, creates the GitHub release with the changelog section and the
+`.vsix`, and — when the `OVSX_PAT` secret exists — publishes to Open VSX too.
+
+Repository secrets: `VSCE_PAT` (Azure DevOps token, Marketplace → Manage) and,
+optionally, `OVSX_PAT` (Open VSX access token).

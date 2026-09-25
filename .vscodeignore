@@ -2,3 +2,5 @@ scripts/**
 .gitignore
 *.vsix
 preview.html
+.github/**
+.gitattributes
