@@ -1,0 +1,19 @@
+name: Verify Marketplace token
+
+# Run by hand (Actions → Verify Marketplace token → Run workflow) after
+# changing the VSCE_PAT secret: checks it can publish, without publishing.
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Verify VSCE_PAT for the lucascristovam publisher
+        run: npx --yes @vscode/vsce@4 verify-pat lucascristovam
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
