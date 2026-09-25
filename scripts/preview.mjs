@@ -56,7 +56,7 @@ function render(src, p) {
   for (const m of src.matchAll(/\{(\w+)\|(.*?)\}(?=[^}]|$)/gs)) {
     out += `<span style="color:${p.punct}">${esc(src.slice(last, m.index))}</span>`;
     const [, role, text] = m;
-    const color = p[role] ?? FG;
+    const color = p[role] ?? p.variable;
     const style = `color:${color}${ITALIC.has(role) ? ";font-style:italic" : ""}`;
     out += `<span style="${style}">${esc(text)}</span>`;
     last = m.index + m[0].length;
@@ -67,7 +67,7 @@ function render(src, p) {
 
 // Each ink on both papers, side by side.
 const panels = THEMES.flatMap((t) => Object.keys(SURFACES).map((v) => ({ t, S: surfaceFor(v, t.ink) }))).map(({ t, S }) => {
-  const p = syntaxPalette(t.ink, S);
+  const p = syntaxPalette(t, S);
   const acc = INKS[t.ink];
   return `<section style="background:${S.paper[950]};border-color:${S.paper[700]}">
   <header style="background:${acc.main};color:${acc.contrast}">${t.label}${S.suffix}</header>
@@ -80,7 +80,7 @@ writeFileSync(join(root, "preview.html"), `<!doctype html>
 <meta charset="utf-8"><title>Riso Preview</title>
 <style>
   body{margin:0;padding:16px;background:${PAPER[950]};font-family:Inter,system-ui,sans-serif;color:${FG}}
-  main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  main{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   section{background:${PAPER[950]};border:1px solid ${PAPER[700]};border-radius:6px;overflow:hidden}
   header{padding:6px 12px;font-size:13px;font-weight:600}
   pre{margin:0;padding:12px 14px;font:13px/1.5 Consolas,"Cascadia Code",monospace;white-space:pre;overflow-x:auto;border-top:1px solid ${PAPER[800]}}

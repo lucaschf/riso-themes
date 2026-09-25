@@ -135,7 +135,9 @@ class RainbowIdentifiers {
     if (state !== this.lastState) log.info(`identifiers: ${state}`);
     this.lastState = state;
     if (enabled && isRisoTheme()) {
-      this.decorations = palette.identifiers.map((color) =>
+      // Each surface has its own set: pale inks on dark paper, deep inks on light.
+      const label = vscode.workspace.getConfiguration("workbench").get("colorTheme");
+      this.decorations = palette.themes[label].identifiers.map((color) =>
         vscode.window.createTextEditorDecorationType({ color }),
       );
     }

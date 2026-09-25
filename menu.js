@@ -65,7 +65,7 @@ const themeAt = (target) => {
   return target === Workspace ? inspected?.workspaceValue : inspected?.globalValue;
 };
 
-// Pick an ink for one scope, keeping the surface (normal / dimmed) that is on
+// Pick an ink for one scope, keeping the surface (normal / dimmed / paper) that is on
 // screen; previews while moving, restores on Esc. For this project, the list
 // also offers going back to the theme of all projects.
 async function pickInk(target) {
@@ -111,6 +111,14 @@ async function pickInk(target) {
   await setTheme(picked ? valueOf(picked) : before, target);
 }
 
+const SURFACE_OPTIONS = [
+  { variant: "normal", label: "Normal", detail: "Near-black paper" },
+  { variant: "dimmed", label: "Dimmed", detail: "The paper lifted a notch, tinted with the theme's ink; softer contrast" },
+  { variant: "paper", label: "Paper", detail: "Light: ink on warm cream stock, like a riso print" },
+];
+const surfaceLabel = (variant) => SURFACE_OPTIONS.find((o) => o.variant === variant)?.label ?? variant;
+
+// Both change the theme where it is decided (this project or all projects).
 async function toggleDimmed() {
   const info = themeInfo();
   if (!info) {
@@ -118,6 +126,19 @@ async function toggleDimmed() {
     return;
   }
   await setTheme(labelFor(info.base, info.variant === "dimmed" ? "normal" : "dimmed"));
+}
+
+async function pickSurface() {
+  const info = themeInfo();
+  if (!info) {
+    vscode.window.showInformationMessage("Riso: pick a Riso theme first.");
+    return;
+  }
+  const picked = await vscode.window.showQuickPick(
+    SURFACE_OPTIONS.map((o) => ({ ...o, description: o.variant === info.variant ? "current" : undefined })),
+    { title: "Background", placeHolder: surfaceLabel(info.variant) },
+  );
+  if (picked) await setTheme(labelFor(info.base, picked.variant));
 }
 
 async function pickMode(setting, title) {
@@ -192,10 +213,10 @@ function menuItems() {
       detail: projectTheme ? "Overridden in this project" : undefined,
     },
     {
-      id: "dimmed",
+      id: "surface",
       label: "$(color-mode) Background",
-      description: info ? (info.variant === "dimmed" ? "Dimmed" : "Normal") : "—",
-      detail: `Dimmed lifts the paper a notch · applies to ${themeTarget() === Workspace ? "this project" : "all projects"}`,
+      description: info ? surfaceLabel(info.variant) : "—",
+      detail: `Normal, Dimmed or Paper (light) · applies to ${themeTarget() === Workspace ? "this project" : "all projects"}`,
     },
     sep("Code"),
     { id: "brackets", label: "$(bracket) Brackets", description: modeLabel(cfg.get("brackets")) },
@@ -224,7 +245,7 @@ async function run(id) {
   switch (id) {
     case "project": return pickInk(Workspace);
     case "global": return pickInk(Global);
-    case "dimmed": return toggleDimmed();
+    case "surface": return pickSurface();
     case "pairGuides": return cyclePairGuides();
     case "brackets": return pickMode("brackets", "Brackets");
     case "indent": return pickMode("indentGuides", "Indent guides");
@@ -266,7 +287,7 @@ function registerStatusBar(context) {
     const show = info && vscode.workspace.getConfiguration(SECTION).get("statusBarItem");
     if (!show) return item.hide();
     const own = themeAt(Workspace) !== undefined;
-    item.text = `$(${own ? "root-folder" : "symbol-color"}) ${shortName(info.base)}${info.variant === "dimmed" ? " · dim" : ""}`;
+    item.text = `$(${own ? "root-folder" : "symbol-color"}) ${shortName(info.base)}${{ dimmed: " · dim", paper: " · paper" }[info.variant] ?? ""}`;
     item.tooltip = `${currentTheme()}${own ? " — this project's theme" : ""} · Riso options`;
     item.show();
   };

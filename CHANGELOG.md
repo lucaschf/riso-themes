@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.0
+
+- Three new inks from the risograph catalogue: **Pink** (fluorescent),
+  **Federal Blue** and **Sunflower**.
+- **Pink × Blue**: a duotone printed with two inks and their purple overprint.
+- **Paper**: every theme also comes light, ink on warm cream stock.
+  *Background* in the options menu picks Normal, Dimmed or Paper.
+- Color by name uses each paper's own set, deep inks on the light one.
+- The build audits the contrast of every text color on every paper.
+
 ## 1.1.0
 
 - Options menu: *Theme · this project* and *Theme · all projects*, one ink picker

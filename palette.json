@@ -1,20 +1,4 @@
 {
-  "identifiers": [
-    "#E07A62",
-    "#DBB85E",
-    "#A48BC8",
-    "#5FAAAA",
-    "#DB8A55",
-    "#6E9CCB",
-    "#6FAE7E",
-    "#EAA493",
-    "#E6CE8D",
-    "#C2B0DA",
-    "#93C7C7",
-    "#E7AF8A",
-    "#9EBDDD",
-    "#9DC9A7"
-  ],
   "themes": {
     "Riso Touge": {
       "ink": "touge",
@@ -45,7 +29,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Touge Dimmed": {
       "ink": "touge",
@@ -76,7 +78,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Touge Paper": {
+      "ink": "touge",
+      "base": "Riso Touge",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#2C797A",
+          "#BE442D",
+          "#3A6EA5",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#BE442D",
+          "#8C6B3F",
+          "#893120",
+          "#6E5230",
+          "#BE442D",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Green": {
       "ink": "green",
@@ -107,7 +176,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Green Dimmed": {
       "ink": "green",
@@ -138,7 +225,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Green Paper": {
+      "ink": "green",
+      "base": "Riso Green",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#BE442D",
+          "#3B7A4C",
+          "#A6531F",
+          "#3A6EA5"
+        ],
+        "duotone": [
+          "#3B7A4C",
+          "#8C6B3F",
+          "#2A5837",
+          "#6E5230",
+          "#3B7A4C",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Blue": {
       "ink": "blue",
@@ -169,7 +323,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Blue Dimmed": {
       "ink": "blue",
@@ -200,7 +372,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Blue Paper": {
+      "ink": "blue",
+      "base": "Riso Blue",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#2C797A",
+          "#3A6EA5",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#3A6EA5",
+          "#8C6B3F",
+          "#2A4F77",
+          "#6E5230",
+          "#3A6EA5",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Purple": {
       "ink": "purple",
@@ -231,7 +470,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Purple Dimmed": {
       "ink": "purple",
@@ -262,7 +519,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Purple Paper": {
+      "ink": "purple",
+      "base": "Riso Purple",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#3A6EA5",
+          "#2C797A",
+          "#7A5AA6",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#7A5AA6",
+          "#8C6B3F",
+          "#584178",
+          "#6E5230",
+          "#7A5AA6",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Grey": {
       "ink": "grey",
@@ -293,7 +617,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Grey Dimmed": {
       "ink": "grey",
@@ -324,7 +666,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Grey Paper": {
+      "ink": "grey",
+      "base": "Riso Grey",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#2C797A",
+          "#6B6F68",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#6B6F68",
+          "#8C6B3F",
+          "#4D504B",
+          "#6E5230",
+          "#6B6F68",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Orange": {
       "ink": "orange",
@@ -355,7 +764,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Orange Dimmed": {
       "ink": "orange",
@@ -386,7 +813,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Orange Paper": {
+      "ink": "orange",
+      "base": "Riso Orange",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#2C797A",
+          "#A6531F",
+          "#3A6EA5",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#A6531F",
+          "#8C6B3F",
+          "#783C16",
+          "#6E5230",
+          "#A6531F",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Teal": {
       "ink": "teal",
@@ -417,7 +911,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Teal Dimmed": {
       "ink": "teal",
@@ -448,7 +960,74 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Teal Paper": {
+      "ink": "teal",
+      "base": "Riso Teal",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#BE442D",
+          "#2C797A",
+          "#A6531F",
+          "#3A6EA5"
+        ],
+        "duotone": [
+          "#2C797A",
+          "#8C6B3F",
+          "#205758",
+          "#6E5230",
+          "#2C797A",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     },
     "Riso Mustard": {
       "ink": "mustard",
@@ -479,7 +1058,25 @@
           "#9A8D7A",
           "#9A8D7A"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
     },
     "Riso Mustard Dimmed": {
       "ink": "mustard",
@@ -510,7 +1107,662 @@
           "#9A8E7B",
           "#9A8E7B"
         ]
-      }
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Mustard Paper": {
+      "ink": "mustard",
+      "base": "Riso Mustard",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#3A6EA5",
+          "#7A5AA6",
+          "#2C797A",
+          "#7F641F",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#7F641F",
+          "#8C6B3F",
+          "#5B4816",
+          "#6E5230",
+          "#7F641F",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
+    },
+    "Riso Pink": {
+      "ink": "pink",
+      "base": "Riso Pink",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#FF85C8",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#FF85C8",
+          "#D9C4A0",
+          "#FFA9D8",
+          "#EAD9BC",
+          "#FF85C8",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Pink Dimmed": {
+      "ink": "pink",
+      "base": "Riso Pink",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#FF85C8",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#FF85C8",
+          "#D9C4A0",
+          "#FFA9D8",
+          "#EAD9BC",
+          "#FF85C8",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Pink Paper": {
+      "ink": "pink",
+      "base": "Riso Pink",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#2C797A",
+          "#BF3684",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#BF3684",
+          "#8C6B3F",
+          "#8A275F",
+          "#6E5230",
+          "#BF3684",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
+    },
+    "Riso Federal Blue": {
+      "ink": "federal",
+      "base": "Riso Federal Blue",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#8E9BE0",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#8E9BE0",
+          "#D9C4A0",
+          "#AEB8E5",
+          "#EAD9BC",
+          "#8E9BE0",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Federal Blue Dimmed": {
+      "ink": "federal",
+      "base": "Riso Federal Blue",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#DBB85E",
+          "#A48BC8",
+          "#5FAAAA",
+          "#8E9BE0",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#8E9BE0",
+          "#D9C4A0",
+          "#AEB8E5",
+          "#EAD9BC",
+          "#8E9BE0",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Federal Blue Paper": {
+      "ink": "federal",
+      "base": "Riso Federal Blue",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#7F641F",
+          "#7A5AA6",
+          "#2C797A",
+          "#3D5588",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#3D5588",
+          "#8C6B3F",
+          "#2C3D62",
+          "#6E5230",
+          "#3D5588",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
+    },
+    "Riso Sunflower": {
+      "ink": "sunflower",
+      "base": "Riso Sunflower",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#6E9CCB",
+          "#A48BC8",
+          "#5FAAAA",
+          "#FFCB57",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#FFCB57",
+          "#D9C4A0",
+          "#FFDB89",
+          "#EAD9BC",
+          "#FFCB57",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Sunflower Dimmed": {
+      "ink": "sunflower",
+      "base": "Riso Sunflower",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#6E9CCB",
+          "#A48BC8",
+          "#5FAAAA",
+          "#FFCB57",
+          "#DB8A55",
+          "#6FAE7E"
+        ],
+        "duotone": [
+          "#FFCB57",
+          "#D9C4A0",
+          "#FFDB89",
+          "#EAD9BC",
+          "#FFCB57",
+          "#D9C4A0"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Sunflower Paper": {
+      "ink": "sunflower",
+      "base": "Riso Sunflower",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#3A6EA5",
+          "#7A5AA6",
+          "#2C797A",
+          "#8C6409",
+          "#A6531F",
+          "#3B7A4C"
+        ],
+        "duotone": [
+          "#8C6409",
+          "#8C6B3F",
+          "#654806",
+          "#6E5230",
+          "#8C6409",
+          "#8C6B3F"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
+    },
+    "Riso Pink × Blue": {
+      "ink": "pink",
+      "base": "Riso Pink × Blue",
+      "variant": "normal",
+      "levels": {
+        "rainbow": [
+          "#6E9CCB",
+          "#C9B1D7",
+          "#8B74B2",
+          "#FF85C8",
+          "#FFC6E5",
+          "#C4D6EA"
+        ],
+        "duotone": [
+          "#FF85C8",
+          "#6E9CCB",
+          "#FFA9D8",
+          "#9EBDDD",
+          "#FF85C8",
+          "#6E9CCB"
+        ],
+        "plain": [
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A",
+          "#9A8D7A"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Pink × Blue Dimmed": {
+      "ink": "pink",
+      "base": "Riso Pink × Blue",
+      "variant": "dimmed",
+      "levels": {
+        "rainbow": [
+          "#6E9CCB",
+          "#CBB3D8",
+          "#927DB7",
+          "#FF85C8",
+          "#FFC6E5",
+          "#C4D6EA"
+        ],
+        "duotone": [
+          "#FF85C8",
+          "#6E9CCB",
+          "#FFA9D8",
+          "#9EBDDD",
+          "#FF85C8",
+          "#6E9CCB"
+        ],
+        "plain": [
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B",
+          "#9A8E7B"
+        ]
+      },
+      "identifiers": [
+        "#E07A62",
+        "#FF85C8",
+        "#DBB85E",
+        "#A48BC8",
+        "#5FAAAA",
+        "#DB8A55",
+        "#6E9CCB",
+        "#6FAE7E",
+        "#EAA493",
+        "#FFA9D8",
+        "#E6CE8D",
+        "#C2B0DA",
+        "#93C7C7",
+        "#E7AF8A",
+        "#9EBDDD",
+        "#9DC9A7"
+      ]
+    },
+    "Riso Pink × Blue Paper": {
+      "ink": "pink",
+      "base": "Riso Pink × Blue",
+      "variant": "paper",
+      "levels": {
+        "rainbow": [
+          "#3A6EA5",
+          "#372950",
+          "#6E519F",
+          "#BF3684",
+          "#601B42",
+          "#1D3753"
+        ],
+        "duotone": [
+          "#BF3684",
+          "#3A6EA5",
+          "#8A275F",
+          "#2A4F77",
+          "#BF3684",
+          "#3A6EA5"
+        ],
+        "plain": [
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D",
+          "#6B5F4D"
+        ]
+      },
+      "identifiers": [
+        "#BE442D",
+        "#BF3684",
+        "#7F641F",
+        "#7A5AA6",
+        "#2C797A",
+        "#A6531F",
+        "#3A6EA5",
+        "#3B7A4C",
+        "#893120",
+        "#8A275F",
+        "#5B4816",
+        "#584178",
+        "#205758",
+        "#783C16",
+        "#2A4F77",
+        "#2A5837"
+      ]
     }
   }
 }

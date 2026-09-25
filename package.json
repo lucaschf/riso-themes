@@ -1,8 +1,8 @@
 {
   "name": "riso-themes",
   "displayName": "Riso Themes",
-  "description": "Dark themes printed like a risograph: one warm black paper, a cream second ink and a different ink per theme. Rainbow brackets, per-name identifier colors and dimmed variants.",
-  "version": "1.1.0",
+  "description": "Themes printed like a risograph: an ink on paper and a second ink. 11 inks and a Pink × Blue duotone, each on dark, dimmed and light paper. Rainbow brackets, per-name identifier colors, per-project themes.",
+  "version": "1.2.0",
   "publisher": "lucascristovam",
   "license": "MIT",
   "icon": "images/icon.png",
@@ -32,6 +32,11 @@
         "path": "./themes/riso-touge-dimmed.json"
       },
       {
+        "label": "Riso Touge Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-touge-paper.json"
+      },
+      {
         "label": "Riso Green",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-green.json"
@@ -40,6 +45,11 @@
         "label": "Riso Green Dimmed",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-green-dimmed.json"
+      },
+      {
+        "label": "Riso Green Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-green-paper.json"
       },
       {
         "label": "Riso Blue",
@@ -52,6 +62,11 @@
         "path": "./themes/riso-blue-dimmed.json"
       },
       {
+        "label": "Riso Blue Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-blue-paper.json"
+      },
+      {
         "label": "Riso Purple",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-purple.json"
@@ -60,6 +75,11 @@
         "label": "Riso Purple Dimmed",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-purple-dimmed.json"
+      },
+      {
+        "label": "Riso Purple Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-purple-paper.json"
       },
       {
         "label": "Riso Grey",
@@ -72,6 +92,11 @@
         "path": "./themes/riso-grey-dimmed.json"
       },
       {
+        "label": "Riso Grey Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-grey-paper.json"
+      },
+      {
         "label": "Riso Orange",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-orange.json"
@@ -80,6 +105,11 @@
         "label": "Riso Orange Dimmed",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-orange-dimmed.json"
+      },
+      {
+        "label": "Riso Orange Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-orange-paper.json"
       },
       {
         "label": "Riso Teal",
@@ -92,6 +122,11 @@
         "path": "./themes/riso-teal-dimmed.json"
       },
       {
+        "label": "Riso Teal Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-teal-paper.json"
+      },
+      {
         "label": "Riso Mustard",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-mustard.json"
@@ -100,6 +135,71 @@
         "label": "Riso Mustard Dimmed",
         "uiTheme": "vs-dark",
         "path": "./themes/riso-mustard-dimmed.json"
+      },
+      {
+        "label": "Riso Mustard Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-mustard-paper.json"
+      },
+      {
+        "label": "Riso Pink",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-pink.json"
+      },
+      {
+        "label": "Riso Pink Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-pink-dimmed.json"
+      },
+      {
+        "label": "Riso Pink Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-pink-paper.json"
+      },
+      {
+        "label": "Riso Federal Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-federal-blue.json"
+      },
+      {
+        "label": "Riso Federal Blue Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-federal-blue-dimmed.json"
+      },
+      {
+        "label": "Riso Federal Blue Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-federal-blue-paper.json"
+      },
+      {
+        "label": "Riso Sunflower",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-sunflower.json"
+      },
+      {
+        "label": "Riso Sunflower Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-sunflower-dimmed.json"
+      },
+      {
+        "label": "Riso Sunflower Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-sunflower-paper.json"
+      },
+      {
+        "label": "Riso Pink × Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-pink-blue.json"
+      },
+      {
+        "label": "Riso Pink × Blue Dimmed",
+        "uiTheme": "vs-dark",
+        "path": "./themes/riso-pink-blue-dimmed.json"
+      },
+      {
+        "label": "Riso Pink × Blue Paper",
+        "uiTheme": "vs",
+        "path": "./themes/riso-pink-blue-paper.json"
       }
     ],
     "configuration": {

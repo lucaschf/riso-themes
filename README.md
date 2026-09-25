@@ -1,15 +1,21 @@
 # Riso Themes
 
-Dark VS Code themes printed like a risograph: one warm printed-black paper, a
-cream second ink, and a different ink per theme.
+VS Code themes printed like a risograph: an ink on paper, a second ink, and
+nothing more.
 
-**Riso Touge** (brick vermilion) · **Riso Green** · **Riso Blue** · **Riso Purple** ·
-**Riso Grey** · **Riso Orange** · **Riso Teal** · **Riso Mustard** — each also as **… Dimmed**.
+**Inks:** Touge (brick vermilion) · Pink (fluorescent) · Orange · Sunflower ·
+Mustard · Green · Teal · Blue · Federal Blue · Purple · Grey — plus the duotone
+**Pink × Blue**. Each one comes on three papers: near black, **Dimmed** and
+**Paper** (light). 36 themes in all.
 
 - Keywords, cursor, tabs, badges, buttons and the status bar band use the theme's ink.
 - Strings, functions, types, numbers and decorators use the *other* inks of the
   family; a role that would repeat the theme's own ink falls through to a spare one.
-- Docstrings / JSDoc print in cream italic, apart from code strings.
+- **Pink × Blue** is printed with two inks only: pink, blue, and the purple where
+  they overprint.
+- Docstrings / JSDoc print in the second ink, in italic, apart from code strings.
+- Every text color is checked against its background: code reads at 4.5:1 or more
+  on every paper.
 
 ## Options
 
@@ -17,13 +23,18 @@ Everything is one menu away: **Riso: Options…** (Command Palette) or the butto
 in the status bar. Each row shows the current value; picking it changes it and
 the menu reopens on the same row.
 
-## Dimmed
+## Papers
 
-Every theme also comes as **… Dimmed**: the paper lifted a notch (around `#191713`
-instead of `#0C0C0A`) and softer text, for less contrast. Each dimmed paper is
-tinted with its own ink at the same luminance, so none is lighter than another.
-**Riso: Toggle Dimmed Background** switches between the two, in the global or
-the workspace theme, wherever it is set.
+- **Normal** — near-black stock (`#0C0C0A`).
+- **Dimmed** — lifted a notch (around `#191713`) with softer text, for less
+  contrast. Each dimmed paper is tinted with its own ink at the same luminance,
+  so none is lighter than another.
+- **Paper** — light: ink on warm cream (`#F7F1E4`), the stock a riso actually
+  prints on, with a sepia second ink.
+
+*Background* in **Riso: Options…** switches between them, in the global or the
+workspace theme, wherever it is set. **Riso: Toggle Dimmed Background** flips
+normal ↔ dimmed.
 
 ## Brackets and indent guides
 
@@ -49,7 +60,7 @@ uninstalling to remove them.
 Every parameter, *local* variable, attribute, constant and class gets its own
 color, derived from the name, so `movieId` is the same color on every line and in
 every file (like JetBrains' semantic highlighting). Globals, imports and built-ins
-keep the theme's color. 14 colors: the family's inks and their tints.
+keep the theme's color. 16 colors per paper: the family's inks at two weights.
 
 | Setting | Default |
 |---|---|
@@ -76,8 +87,10 @@ alongside Peacock, which paints the title / activity / status bars on top.
 
 Every color lives in `scripts/build.mjs`. `npm run build` regenerates
 `themes/*.json`, the theme list in `package.json`, `palette.json` (read by the
-extension) and `preview.html` (every theme side by side).
+extension) and `preview.html` (every theme on its three papers). The build fails
+if any text color drops below its contrast floor (4.5:1 for code, 4:1 for
+comments and docs, 3:1 for punctuation).
 
     npm run build
     npx @vscode/vsce package
-    code --install-extension riso-themes-1.0.0.vsix
+    code --install-extension riso-themes-1.2.0.vsix
