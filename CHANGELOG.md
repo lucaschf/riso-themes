@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.2.2
 
 - README badges moved to badgen.net (shields.io retired its Marketplace badges).
 
