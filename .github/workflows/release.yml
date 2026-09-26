@@ -44,7 +44,7 @@ jobs:
         run: npx --yes @vscode/vsce@4 package --out "riso-themes-$VERSION.vsix"
 
       - name: Publish to the VS Code Marketplace
-        run: npx --yes @vscode/vsce@4 publish --packagePath "riso-themes-$VERSION.vsix"
+        run: npx --yes @vscode/vsce@4 publish --packagePath "riso-themes-$VERSION.vsix" --pat "$VSCE_PAT"
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
