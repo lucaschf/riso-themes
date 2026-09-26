@@ -2,7 +2,7 @@
   "name": "riso-themes",
   "displayName": "Riso Themes",
   "description": "Themes printed like a risograph: an ink on paper and a second ink. 11 inks and a Pink × Blue duotone, each on dark, dimmed and light paper. Rainbow brackets, per-name identifier colors, per-project themes.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "publisher": "lucascristovam",
   "license": "MIT",
   "icon": "images/icon.png",

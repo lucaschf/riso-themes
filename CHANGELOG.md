@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.2.1
 
 - README rewritten: screenshots of every ink, the three papers, the duotone and
   color by name; install steps, language support, a full settings and commands
