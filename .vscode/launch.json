@@ -1,0 +1,14 @@
+{
+  // F5 opens a second VS Code window running the extension straight from this
+  // folder, next to (not instead of) any installed Riso Themes. Run
+  // `npm run build` first when colors changed.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Riso Themes",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": ["--extensionDevelopmentPath=${workspaceFolder}"]
+    }
+  ]
+}

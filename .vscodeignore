@@ -5,3 +5,4 @@ preview.html
 .github/**
 .gitattributes
 images/screenshots/**
+.vscode/**
