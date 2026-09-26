@@ -13,7 +13,19 @@ jobs:
         with:
           node-version: 22
 
+      # Shape only, never the value: a pasted token often carries a trailing
+      # newline or space, which the Marketplace rejects like a wrong token.
+      - name: Inspect the secret's shape
+        run: |
+          echo "length: ${#VSCE_PAT}"
+          case "$VSCE_PAT" in
+            *[[:space:]]*) echo "::warning::VSCE_PAT contains whitespace or a line break — re-set it with just the token." ;;
+            *) echo "no whitespace" ;;
+          esac
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
       - name: Verify VSCE_PAT for the lucascristovam publisher
-        run: npx --yes @vscode/vsce@4 verify-pat lucascristovam --pat "$VSCE_PAT"
+        run: npx --yes @vscode/vsce@4 verify-pat lucascristovam --pat "$(echo "$VSCE_PAT" | tr -d '[:space:]')"
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
