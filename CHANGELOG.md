@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- README badges moved to badgen.net (shields.io retired its Marketplace badges).
+
 ## 1.2.1
 
 - README rewritten: screenshots of every ink, the three papers, the duotone and

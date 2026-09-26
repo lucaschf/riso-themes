@@ -1,7 +1,7 @@
 # Riso Themes
 
-[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/lucascristovam.riso-themes?label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=lucascristovam.riso-themes)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/lucascristovam.riso-themes)](https://marketplace.visualstudio.com/items?itemName=lucascristovam.riso-themes)
+[![Marketplace](https://badgen.net/vs-marketplace/v/lucascristovam.riso-themes)](https://marketplace.visualstudio.com/items?itemName=lucascristovam.riso-themes)
+[![Installs](https://badgen.net/vs-marketplace/i/lucascristovam.riso-themes)](https://marketplace.visualstudio.com/items?itemName=lucascristovam.riso-themes)
 [![CI](https://github.com/lucaschf/riso-themes/actions/workflows/ci.yml/badge.svg)](https://github.com/lucaschf/riso-themes/actions/workflows/ci.yml)
 
 VS Code themes printed like a risograph: an ink on paper, a second ink, and
