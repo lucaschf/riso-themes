@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- README rewritten: screenshots of every ink, the three papers, the duotone and
+  color by name; install steps, language support, a full settings and commands
+  reference, and an FAQ.
+
 ## 1.2.0
 
 - Three new inks from the risograph catalogue: **Pink** (fluorescent),
