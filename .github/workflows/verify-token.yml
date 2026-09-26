@@ -18,6 +18,10 @@ jobs:
       - name: Inspect the secret's shape
         run: |
           echo "length: ${#VSCE_PAT}"
+          if [ -z "$VSCE_PAT" ]; then
+            echo "::error::VSCE_PAT is empty. Copy the token, then run: Get-Clipboard | gh secret set VSCE_PAT --repo lucaschf/riso-themes"
+            exit 1
+          fi
           case "$VSCE_PAT" in
             *[[:space:]]*) echo "::warning::VSCE_PAT contains whitespace or a line break — re-set it with just the token." ;;
             *) echo "no whitespace" ;;

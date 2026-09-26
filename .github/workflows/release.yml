@@ -44,7 +44,14 @@ jobs:
         run: npx --yes @vscode/vsce@4 package --out "riso-themes-$VERSION.vsix"
 
       - name: Publish to the VS Code Marketplace
-        run: npx --yes @vscode/vsce@4 publish --packagePath "riso-themes-$VERSION.vsix" --pat "$VSCE_PAT"
+        run: |
+          # A pasted token can carry a line break; the Marketplace rejects it.
+          pat=$(echo "$VSCE_PAT" | tr -d '[:space:]')
+          if [ -z "$pat" ]; then
+            echo "::error::VSCE_PAT is empty. Copy the token, then run: Get-Clipboard | gh secret set VSCE_PAT --repo lucaschf/riso-themes"
+            exit 1
+          fi
+          npx --yes @vscode/vsce@4 publish --packagePath "riso-themes-$VERSION.vsix" --pat "$pat"
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
