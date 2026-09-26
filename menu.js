@@ -236,6 +236,11 @@ function menuItems() {
       description: cfg.get("statusBarItem") ? "Shown" : "Hidden",
     },
     { id: "settings", label: "$(gear) All settings…" },
+    {
+      id: "remove",
+      label: "$(trash) Remove all Riso settings…",
+      detail: "Before uninstalling: reset every option and delete the colors Riso wrote",
+    },
   ];
 }
 
@@ -254,6 +259,7 @@ async function run(id) {
     case "statusbar": return cfg.update("statusBarItem", !cfg.get("statusBarItem"), Global);
     case "settings":
       return vscode.commands.executeCommand("workbench.action.openSettings", "@ext:lucascristovam.riso-themes");
+    case "remove": return vscode.commands.executeCommand("riso.removeAllSettings");
   }
 }
 
@@ -272,8 +278,9 @@ async function showMenu(activeId) {
   if (!picked?.id) return;
   log.info(`menu: ${picked.id}`);
   await run(picked.id);
-  // Settings opens its own editor; everything else returns to the menu.
-  if (picked.id !== "settings") await showMenu(picked.id);
+  // Settings opens its own editor and remove is a way out; everything else
+  // returns to the menu.
+  if (picked.id !== "settings" && picked.id !== "remove") await showMenu(picked.id);
 }
 
 // -- Status bar ------------------------------------------------------------------

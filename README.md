@@ -151,6 +151,7 @@ several things in one go.
 | **Riso: Toggle Rainbow Identifiers** | color by name on ↔ off |
 | **Riso: Set Theme for This Workspace…** | give this project its own theme |
 | **Riso: Use Global Theme in This Workspace** | remove it |
+| **Riso: Remove All Riso Settings…** | reset every option and delete the colors Riso wrote, before uninstalling |
 
 ## FAQ
 
@@ -169,9 +170,12 @@ indent-guide modes other than the defaults are stored as theme-scoped entries
 only those keys. Leftovers for themes that no longer exist are cleaned up
 automatically.
 
-**How do I uninstall cleanly?** Set *Brackets* back to Rainbow and *Indent
-guides* back to Plain in **Riso: Options…** first, then uninstall — that
-removes the entries the extension wrote.
+**How do I uninstall cleanly?** Run **Riso: Remove All Riso Settings…** (also
+the last row of **Riso: Options…**) first, then uninstall. It resets every
+`riso.*` option and deletes the bracket and indent-guide colors Riso wrote to
+your settings; anything else you put in the `[Riso …]` scopes stays. Your color
+theme and VS Code's own settings, such as `editor.guides.bracketPairs`, are left
+as they are — change those yourself if you want to.
 
 ## Development
 
@@ -195,15 +199,20 @@ CI builds every push and pull request: the themes must pass the contrast audit,
 the generated files must be committed, and the packaged `.vsix` is kept as a
 build artifact.
 
-To release, bump `version` in `package.json`, add its section to
-`CHANGELOG.md`, commit, then push a matching tag:
+`CHANGELOG.md` follows [Keep a Changelog](https://keepachangelog.com/): changes
+collect under `## [Unreleased]`, grouped as Added / Changed / Fixed / Removed.
+To release, bump `version` in `package.json`, rename `[Unreleased]` to
+`[x.y.z] - YYYY-MM-DD` (open a new empty `[Unreleased]` above it and update the
+compare links at the bottom), commit, then push a matching tag:
 
     git tag v1.3.0
     git push origin v1.3.0
 
 The release workflow then publishes that version to the VS Code Marketplace,
 creates the GitHub release with the changelog section and the `.vsix`, and —
-when the `OVSX_PAT` secret exists — publishes to Open VSX too.
+when the `OVSX_PAT` secret exists — publishes to Open VSX too. It stops before
+publishing if the tag doesn't match `package.json` or the changelog has no
+section for the version.
 
 Repository secrets: `VSCE_PAT` (Azure DevOps token with Marketplace → Manage)
 and, optionally, `OVSX_PAT`. After changing a token, check it with **Actions →

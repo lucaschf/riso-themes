@@ -132,6 +132,47 @@ async function toggle(context, setting, on) {
   vscode.window.setStatusBarMessage(`Riso: ${setting} → ${next}`, 2500);
 }
 
+// Undo everything the extension wrote, for a clean uninstall (like Peacock's
+// "Remove All Global and Workspace Colors"): every riso.* option goes back to
+// its default, and with nothing left to apply, sync() strips the bracket and
+// indent-guide colors from workbench.colorCustomizations. The color theme and
+// VS Code's own settings are the user's choices and are left alone.
+const OPTION_KEYS = Object.keys(require("./package.json").contributes.configuration.properties);
+const MEMO_KEYS = ["last.brackets", "last.indentGuides"];
+
+async function removeAllRisoSettings(context) {
+  const config = vscode.workspace.getConfiguration();
+  for (const key of OPTION_KEYS) {
+    if (config.inspect(key)?.globalValue !== undefined) {
+      await config.update(key, undefined, vscode.ConfigurationTarget.Global);
+    }
+  }
+  for (const key of MEMO_KEYS) await context?.globalState.update(key, undefined);
+  await sync();
+  log.info("remove: riso.* options reset, bracket / indent-guide colors removed");
+}
+
+async function confirmRemoveAll(context) {
+  const choice = await vscode.window.showWarningMessage(
+    "Remove all Riso settings?",
+    {
+      modal: true,
+      detail:
+        "Resets every riso.* option to its default and deletes the bracket and indent-guide colors " +
+        "Riso wrote to your user settings. Your color theme is not changed.",
+    },
+    "Remove",
+  );
+  if (choice !== "Remove") return;
+  try {
+    await removeAllRisoSettings(context);
+    vscode.window.showInformationMessage("Riso settings removed. The extension can now be uninstalled cleanly.");
+  } catch (err) {
+    log.error("remove: could not reset the settings", err);
+    vscode.window.showErrorMessage(`Riso: could not remove the settings — ${err?.message ?? err}`);
+  }
+}
+
 function activate(context) {
   context.subscriptions.push(
     vscode.workspace.onDidChangeConfiguration((e) => {
@@ -146,6 +187,7 @@ function activate(context) {
     vscode.commands.registerCommand("riso.setWorkspaceTheme", () =>
       pickInk(vscode.ConfigurationTarget.Workspace),
     ),
+    vscode.commands.registerCommand("riso.removeAllSettings", () => confirmRemoveAll(context)),
     vscode.commands.registerCommand("riso.useGlobalTheme", () =>
       vscode.workspace
         .getConfiguration("workbench")
@@ -160,4 +202,4 @@ function activate(context) {
   sync();
 }
 
-module.exports = { activate, deactivate() {} };
+module.exports = { activate, deactivate() {}, removeAllRisoSettings };

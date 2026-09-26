@@ -338,6 +338,11 @@
         "command": "riso.toggleRainbowIdentifiers",
         "title": "Toggle Rainbow Identifiers",
         "category": "Riso"
+      },
+      {
+        "command": "riso.removeAllSettings",
+        "title": "Remove All Riso Settings…",
+        "category": "Riso"
       }
     ]
   },

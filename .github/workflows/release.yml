@@ -30,6 +30,16 @@ jobs:
           fi
           echo "VERSION=$version" >> "$GITHUB_ENV"
 
+      # Keep a Changelog: this version's section, "## [1.2.3] - 2026-09-26",
+      # without its heading, up to the next section or the link references.
+      - name: Extract the release notes from CHANGELOG.md
+        run: |
+          awk -v v="$VERSION" 'index($0, "## [" v "]") == 1 { on = 1; next } /^## |^---$/ { on = 0 } on' CHANGELOG.md > notes.md
+          if ! grep -q '[^[:space:]]' notes.md; then
+            echo "::error::CHANGELOG.md has no '## [$VERSION]' section — rename [Unreleased] to it before tagging."
+            exit 1
+          fi
+
       - name: Build themes (fails on the contrast audit)
         run: npm run build
 
@@ -65,8 +75,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # This version's section of CHANGELOG.md, without its heading.
-          awk -v v="$VERSION" '$0 == "## " v { on = 1; next } /^## / { on = 0 } on' CHANGELOG.md > notes.md
           if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" "riso-themes-$VERSION.vsix" --clobber
           else
