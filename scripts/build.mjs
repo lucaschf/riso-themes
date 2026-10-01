@@ -12,7 +12,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const a = (hex, alpha) => hex + alpha; // "#RRGGBB" + "AA"
 
 // Linear mix of two "#RRGGBB" colors; t=0 -> x, t=1 -> y.
-function mix(x, y, t) {
+export function mix(x, y, t) {
   const ch = (h, i) => parseInt(h.slice(1 + i * 2, 3 + i * 2), 16);
   const out = [0, 1, 2].map((i) => Math.round(ch(x, i) + (ch(y, i) - ch(x, i)) * t));
   return "#" + out.map((v) => v.toString(16).padStart(2, "0")).join("").toUpperCase();
@@ -262,7 +262,7 @@ export function inkOn(S, scale) {
 
 // The second ink of a theme: the surface's own (cream / sepia), or for a
 // duotone the partner ink.
-function secondFor(theme, S) {
+export function secondFor(theme, S) {
   if (!theme.second) return S.second;
   const b = inkOn(S, INKS[theme.second]);
   return { main: b.tone, text: b.soft };

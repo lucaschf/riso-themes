@@ -17,7 +17,7 @@
     "Themes"
   ],
   "scripts": {
-    "build": "node scripts/build.mjs && node scripts/preview.mjs",
+    "build": "node scripts/build.mjs && node scripts/preview.mjs && node scripts/jetbrains.mjs",
     "screenshots": "node scripts/screenshots.mjs"
   },
   "contributes": {

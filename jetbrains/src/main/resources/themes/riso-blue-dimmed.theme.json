@@ -1,0 +1,167 @@
+{
+  "name": "Riso Blue Dimmed",
+  "dark": true,
+  "author": "Lucas Cristovam",
+  "editorScheme": "/themes/riso-blue-dimmed.xml",
+  "parentTheme": "ExperimentalDark",
+  "ui": {
+    "*": {
+      "background": "#181E23",
+      "foreground": "#B9AD97",
+      "infoForeground": "#9A8E7B",
+      "disabledForeground": "#766C5C",
+      "selectionBackground": "#3A6EA54D",
+      "selectionForeground": "#DCD2BF",
+      "selectionInactiveBackground": "#2C333B",
+      "selectionBackgroundInactive": "#2C333B",
+      "hoverBackground": "#1F262C",
+      "borderColor": "#1F262C",
+      "separatorColor": "#1F262C",
+      "focusColor": "#3A6EA599",
+      "focusedBorderColor": "#3A6EA599",
+      "inactiveBackground": "#181E23"
+    },
+    "MainWindow": {
+      "background": "#13171C"
+    },
+    "MainToolbar": {
+      "background": "#13171C",
+      "foreground": "#9A8E7B"
+    },
+    "Editor": {
+      "background": "#13171C",
+      "foreground": "#DCD2BF",
+      "SearchField": {
+        "background": "#13171C"
+      }
+    },
+    "EditorTabs": {
+      "background": "#181E23",
+      "underlinedTabBackground": "#13171C",
+      "underlinedTabForeground": "#DCD2BF",
+      "underlineColor": "#3A6EA5",
+      "inactiveUnderlineColor": "#2D578A",
+      "hoverBackground": "#1F262C",
+      "borderColor": "#1F262C"
+    },
+    "ToolWindow": {
+      "background": "#181E23",
+      "Header": {
+        "background": "#181E23",
+        "inactiveBackground": "#181E23"
+      },
+      "Stripe": {
+        "background": "#13171C"
+      },
+      "Button": {
+        "selectedBackground": "#2C333B",
+        "hoverBackground": "#1F262C"
+      }
+    },
+    "StatusBar": {
+      "background": "#3A6EA5",
+      "foreground": "#F5EEE0",
+      "borderColor": "#3A6EA5",
+      "Widget": {
+        "foreground": "#F5EEE0",
+        "hoverBackground": "#00000026"
+      },
+      "Breadcrumbs": {
+        "foreground": "#F5EEE0",
+        "hoverBackground": "#00000026",
+        "selectionBackground": "#00000033"
+      }
+    },
+    "Button": {
+      "focusedBorderColor": "#6E9CCB",
+      "startBackground": "#1F262C",
+      "endBackground": "#1F262C",
+      "startBorderColor": "#2C333B",
+      "endBorderColor": "#2C333B",
+      "default": {
+        "startBackground": "#3A6EA5",
+        "endBackground": "#3A6EA5",
+        "startBorderColor": "#3A6EA5",
+        "endBorderColor": "#3A6EA5",
+        "foreground": "#F5EEE0",
+        "focusedBorderColor": "#6E9CCB"
+      }
+    },
+    "TextField": {
+      "background": "#13171C",
+      "borderColor": "#2C333B",
+      "focusedBorderColor": "#3A6EA599"
+    },
+    "ComboBox": {
+      "background": "#13171C",
+      "nonEditableBackground": "#181E23"
+    },
+    "List": {
+      "background": "#181E23",
+      "selectionBackground": "#3A6EA54D",
+      "selectionInactiveBackground": "#2C333B"
+    },
+    "Tree": {
+      "background": "#181E23",
+      "selectionBackground": "#3A6EA54D",
+      "selectionInactiveBackground": "#2C333B"
+    },
+    "Table": {
+      "background": "#181E23",
+      "selectionBackground": "#3A6EA54D"
+    },
+    "Popup": {
+      "background": "#1F262C",
+      "borderColor": "#2C333B"
+    },
+    "PopupMenu": {
+      "background": "#1F262C"
+    },
+    "Menu": {
+      "background": "#1F262C",
+      "selectionBackground": "#3A6EA54D"
+    },
+    "CompletionPopup": {
+      "background": "#1F262C",
+      "selectionBackground": "#3A6EA54D",
+      "matchForeground": "#6E9CCB"
+    },
+    "Notification": {
+      "background": "#1F262C",
+      "borderColor": "#2C333B"
+    },
+    "Link": {
+      "activeForeground": "#6E9CCB",
+      "hoverForeground": "#D9E5F2",
+      "pressedForeground": "#6E9CCB",
+      "visitedForeground": "#9EBDDD"
+    },
+    "ProgressBar": {
+      "progressColor": "#6E9CCB",
+      "indeterminateStartColor": "#6E9CCB",
+      "indeterminateEndColor": "#3A6EA5"
+    },
+    "ScrollBar": {
+      "Mac": {
+        "thumbColor": "#424A5299"
+      },
+      "thumbColor": "#424A5299"
+    },
+    "Counter": {
+      "background": "#3A6EA5",
+      "foreground": "#F5EEE0"
+    },
+    "Component": {
+      "focusColor": "#3A6EA599",
+      "focusedBorderColor": "#3A6EA599"
+    }
+  },
+  "icons": {
+    "ColorPalette": {
+      "Actions.Blue": "#6E9CCB",
+      "Objects.Blue": "#6E9CCB",
+      "#3574F0": "#6E9CCB",
+      "#548AF7": "#6E9CCB"
+    }
+  }
+}

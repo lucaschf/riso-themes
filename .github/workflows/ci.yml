@@ -23,7 +23,7 @@ jobs:
 
       - name: Check the generated files are committed
         run: |
-          if ! git diff --exit-code -- themes package.json palette.json; then
+          if ! git diff --exit-code -- themes package.json palette.json jetbrains/src; then
             echo "::error::Generated files are out of date — run 'npm run build' and commit the result."
             exit 1
           fi
