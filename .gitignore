@@ -3,3 +3,6 @@ node_modules/
 preview.html
 images/screenshots/.src/
 jetbrains/build/
+jetbrains/.gradle/
+jetbrains/.intellijPlatform/
+jetbrains/.kotlin/

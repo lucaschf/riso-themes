@@ -1,0 +1,6 @@
+<!-- Loaded only when the IDE has Python support (PyCharm, or IDEA with the Python plugin). -->
+<idea-plugin>
+  <extensions defaultExtensionNs="com.intellij">
+    <highlightVisitor implementation="lucascristovam.riso.python.PythonNameColors"/>
+  </extensions>
+</idea-plugin>

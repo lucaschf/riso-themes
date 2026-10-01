@@ -35,3 +35,28 @@ jobs:
         with:
           name: riso-themes-vsix
           path: riso-themes.vsix
+
+  # The JetBrains plugin: its theme files come from the job above (committed),
+  # this compiles the Kotlin and packages the plugin against PyCharm 2024.3.
+  jetbrains:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: jetbrains
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Build the plugin
+        run: ./gradlew buildPlugin --console=plain
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: riso-themes-jetbrains
+          path: jetbrains/build/distributions/*.zip

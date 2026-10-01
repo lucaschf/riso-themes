@@ -10,12 +10,19 @@
     <p>Eleven inks — Touge, Pink, Orange, Sunflower, Mustard, Green, Teal, Blue, Federal Blue,
     Purple, Grey — and the <b>Pink × Blue</b> duotone, each on three papers: near black,
     <b>Dimmed</b> and <b>Paper</b> (light). Every text color is checked for contrast on every paper.</p>
-    <p>The same palettes as the <a href="https://marketplace.visualstudio.com/items?itemName=lucascristovam.riso-themes">VS Code
+    <ul>
+      <li><b>Rainbow brackets</b>: one color per nesting level, in any language.</li>
+      <li><b>Color by name</b> (Python): every parameter, local, attribute, constant and class gets
+      its own color, derived from its name — the same color as in the Riso VS Code extension.</li>
+    </ul>
+    <p>Both work under any theme and can be turned off in <i>Settings → Appearance → Riso</i>.
+    The same palettes as the <a href="https://marketplace.visualstudio.com/items?itemName=lucascristovam.riso-themes">VS Code
     extension</a>, generated from one source.</p>
   ]]></description>
 
   <idea-version since-build="243"/>
   <depends>com.intellij.modules.platform</depends>
+  <depends optional="true" config-file="riso-python.xml">com.intellij.modules.python</depends>
 
   <extensions defaultExtensionNs="com.intellij">
     <themeProvider id="riso-touge" path="/themes/riso-touge.theme.json"/>
@@ -54,5 +61,9 @@
     <themeProvider id="riso-pink-blue" path="/themes/riso-pink-blue.theme.json"/>
     <themeProvider id="riso-pink-blue-dimmed" path="/themes/riso-pink-blue-dimmed.theme.json"/>
     <themeProvider id="riso-pink-blue-paper" path="/themes/riso-pink-blue-paper.theme.json"/>
+    <applicationService serviceImplementation="lucascristovam.riso.RisoSettings"/>
+    <applicationConfigurable parentId="appearance" instance="lucascristovam.riso.RisoConfigurable"
+                             id="lucascristovam.riso" displayName="Riso"/>
+    <highlightVisitor implementation="lucascristovam.riso.RainbowBrackets"/>
   </extensions>
 </idea-plugin>
