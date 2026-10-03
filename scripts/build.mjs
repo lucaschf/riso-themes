@@ -407,7 +407,7 @@ function buildTheme(theme, S, label) {
     "activityBar.background": S.paper[950],
     "activityBar.foreground": S.fg,
     "activityBar.inactiveForeground": S.paper[500],
-    "activityBar.activeBorder": acc.main,
+    "activityBar.activeBorder": ink.tone,
     "activityBar.border": S.paper[800],
     "activityBarBadge.background": acc.main,
     "activityBarBadge.foreground": acc.contrast,
@@ -435,14 +435,27 @@ function buildTheme(theme, S, label) {
     "editorGroup.border": S.paper[800],
     "editorGroupHeader.tabsBackground": S.paper[900],
     "editorGroupHeader.tabsBorder": S.paper[800],
-    "tab.activeBackground": S.paper[950],
+    // The active tab stands out like JetBrains': tinted with the ink and
+    // underlined in its text tone, which reads on every paper (a line in the
+    // full ink vanished on dark inks like grey).
+    "tab.activeBackground": mix(S.paper[950], acc.main, 0.14),
     "tab.activeForeground": S.fg,
-    "tab.activeBorderTop": acc.main,
+    "tab.activeBorder": ink.tone,
+    "tab.activeBorderTop": "#00000000",
+    // "Selected" is the active tab of the focused group — what VS Code shows
+    // while you type; left unset it falls back to the editor background.
+    // VS Code's experimental modern UI ("connected" tabs, on by default since
+    // 2026) ignores all tab colors; with classic tabs these apply.
+    "tab.selectedBackground": mix(S.paper[950], acc.main, 0.14),
+    "tab.selectedForeground": S.fg,
+    "tab.selectedBorderTop": "#00000000",
+    "tab.unfocusedActiveBackground": mix(S.paper[950], acc.main, 0.08),
+    "tab.unfocusedActiveBorder": a(ink.tone, "66"),
     "tab.inactiveBackground": S.paper[900],
     "tab.inactiveForeground": S.paper[500],
     "tab.border": S.paper[800],
     "tab.hoverBackground": S.paper[800],
-    "tab.unfocusedActiveBorderTop": acc.dark,
+    "tab.unfocusedActiveBorderTop": "#00000000",
     "breadcrumb.foreground": S.muted,
     "breadcrumb.focusForeground": S.fg,
     "breadcrumb.activeSelectionForeground": ink.tone,
@@ -547,7 +560,7 @@ function buildTheme(theme, S, label) {
     // Panel / terminal
     "panel.background": S.paper[900],
     "panel.border": S.paper[800],
-    "panelTitle.activeBorder": acc.main,
+    "panelTitle.activeBorder": ink.tone,
     "panelTitle.activeForeground": S.fg,
     "panelTitle.inactiveForeground": S.paper[500],
     "terminal.background": S.paper[900],

@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- The active editor tab stands out like JetBrains': tinted with the theme's ink
+  and underlined in its text tone. VS Code's experimental modern UI ("connected"
+  tabs, on by default) ignores theme tab colors — see the FAQ.
+- The active activity-bar and panel indicators use the ink's text tone, which
+  stays visible on dark inks like Grey and Federal Blue.
+
 ## [1.3.0] - 2026-09-26
 
 ### Added

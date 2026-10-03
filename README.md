@@ -160,6 +160,11 @@ tokens (see the table above), and the first file can take a few seconds while
 the language server starts; the extension keeps retrying for about two minutes.
 The **Riso** channel in the Output panel logs what it painted, or why not.
 
+**The active tab isn't highlighted.** Riso tints the active tab with the
+theme's ink and underlines it, but VS Code's experimental modern UI — on by
+default since 2026, with "connected" tabs — ignores theme tab colors. Set
+`"workbench.experimental.modernUI": false` for classic tabs to get it.
+
 **Does it work with Peacock?** Yes. Peacock paints the title, activity and
 status bars on top of whatever theme is active, including a per-project Riso
 theme.

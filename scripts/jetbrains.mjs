@@ -218,10 +218,10 @@ function uiTheme(theme, S, name, schemeFile) {
       Editor: { background: S.paper[950], foreground: S.fg, SearchField: { background: S.paper[950] } },
       EditorTabs: {
         background: S.paper[900],
-        underlinedTabBackground: S.paper[950],
+        underlinedTabBackground: mix(S.paper[950], acc.main, 0.14),
         underlinedTabForeground: S.fg,
-        underlineColor: acc.main,
-        inactiveUnderlineColor: acc.dark,
+        underlineColor: ink.tone,
+        inactiveUnderlineColor: a(ink.tone, "66"),
         hoverBackground: S.paper[800],
         borderColor: S.paper[800],
       },
@@ -231,13 +231,23 @@ function uiTheme(theme, S, name, schemeFile) {
         Stripe: { background: S.paper[950] },
         Button: { selectedBackground: S.paper[700], hoverBackground: S.paper[800] },
       },
-      // The status bar is a solid band of the ink, as in the VS Code themes.
+      // Paper, with a line of ink on top. Not the VS Code ink band: some IDE
+      // versions keep the paper behind the status bar text, and the band's
+      // label tone (near-black on pink, mustard, sunflower) then vanishes.
       StatusBar: {
-        background: acc.main,
-        foreground: acc.contrast,
-        borderColor: acc.main,
-        Widget: { foreground: acc.contrast, hoverBackground: "#00000026" },
-        Breadcrumbs: { foreground: acc.contrast, hoverBackground: "#00000026", selectionBackground: "#00000033" },
+        background: S.paper[950],
+        foreground: S.muted,
+        borderColor: ink.tone,
+        Widget: { foreground: S.paper[300], hoverBackground: S.paper[800], pressedBackground: S.paper[700] },
+        Breadcrumbs: {
+          foreground: S.paper[300],
+          hoverForeground: S.fg,
+          hoverBackground: S.paper[800],
+          selectionForeground: S.fg,
+          selectionBackground: a(acc.main, "4D"),
+          floatingBackground: S.paper[900],
+          floatingForeground: S.paper[300],
+        },
       },
       Button: {
         focusedBorderColor: ink.tone,

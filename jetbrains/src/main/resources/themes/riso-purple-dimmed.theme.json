@@ -37,10 +37,10 @@
     },
     "EditorTabs": {
       "background": "#201A27",
-      "underlinedTabBackground": "#1A1520",
+      "underlinedTabBackground": "#271F33",
       "underlinedTabForeground": "#DCD2BF",
-      "underlineColor": "#7A5AA6",
-      "inactiveUnderlineColor": "#62488A",
+      "underlineColor": "#A48BC8",
+      "inactiveUnderlineColor": "#A48BC866",
       "hoverBackground": "#282331",
       "borderColor": "#282331"
     },
@@ -59,17 +59,22 @@
       }
     },
     "StatusBar": {
-      "background": "#7A5AA6",
-      "foreground": "#F5EEE0",
-      "borderColor": "#7A5AA6",
+      "background": "#1A1520",
+      "foreground": "#9A8E7B",
+      "borderColor": "#A48BC8",
       "Widget": {
-        "foreground": "#F5EEE0",
-        "hoverBackground": "#00000026"
+        "foreground": "#B9AD97",
+        "hoverBackground": "#282331",
+        "pressedBackground": "#362F3F"
       },
       "Breadcrumbs": {
-        "foreground": "#F5EEE0",
-        "hoverBackground": "#00000026",
-        "selectionBackground": "#00000033"
+        "foreground": "#B9AD97",
+        "hoverForeground": "#DCD2BF",
+        "hoverBackground": "#282331",
+        "selectionForeground": "#DCD2BF",
+        "selectionBackground": "#7A5AA64D",
+        "floatingBackground": "#201A27",
+        "floatingForeground": "#B9AD97"
       }
     },
     "Button": {
