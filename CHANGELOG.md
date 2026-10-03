@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2026-10-03
+
+### Added
+- *Tab highlight* in **Riso: Options…** and **Riso: Toggle Tab Highlight**:
+  switches VS Code to classic tabs, which show the active tab's highlight
+  (the experimental modern UI ignores theme tab colors).
+
 ### Changed
 - The active editor tab stands out like JetBrains': tinted with the theme's ink
   and underlined in its text tone. VS Code's experimental modern UI ("connected"
@@ -74,7 +81,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/lucaschf/riso-themes/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/lucaschf/riso-themes/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/lucaschf/riso-themes/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/lucaschf/riso-themes/compare/v1.2.2...v1.3.0
 [1.2.2]: https://github.com/lucaschf/riso-themes/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/lucaschf/riso-themes/compare/v1.2.0...v1.2.1

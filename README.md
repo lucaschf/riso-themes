@@ -146,6 +146,7 @@ several things in one go.
 |---|---|
 | **Riso: Options…** | the options menu |
 | **Riso: Toggle Dimmed Background** | normal ↔ dimmed |
+| **Riso: Toggle Tab Highlight** | classic tabs, so the active tab shows its ink tint and underline |
 | **Riso: Toggle Rainbow Brackets** | brackets on ↔ off, remembering the last mode |
 | **Riso: Toggle Rainbow Indent Guides** | same for indent guides |
 | **Riso: Toggle Rainbow Identifiers** | color by name on ↔ off |
@@ -162,8 +163,10 @@ The **Riso** channel in the Output panel logs what it painted, or why not.
 
 **The active tab isn't highlighted.** Riso tints the active tab with the
 theme's ink and underlines it, but VS Code's experimental modern UI — on by
-default since 2026, with "connected" tabs — ignores theme tab colors. Set
-`"workbench.experimental.modernUI": false` for classic tabs to get it.
+default since 2026, with "connected" tabs — ignores theme tab colors. Turn on
+*Tab highlight* in **Riso: Options…** (or **Riso: Toggle Tab Highlight**): it
+switches VS Code to classic tabs (`"workbench.experimental.modernUI": false`);
+turning it off removes that setting again.
 
 **Does it work with Peacock?** Yes. Peacock paints the title, activity and
 status bars on top of whatever theme is active, including a per-project Riso

@@ -166,6 +166,16 @@ async function cyclePairGuides() {
   await editorGuides().update("bracketPairs", next.value, Global);
 }
 
+// The active-tab highlight needs VS Code's classic tabs: its experimental
+// modern UI ("connected" tabs, on by default) ignores theme tab colors. On sets
+// classic tabs; off removes the setting, back to VS Code's own default.
+const experimental = () => vscode.workspace.getConfiguration("workbench.experimental");
+const classicTabs = () => experimental().get("modernUI") === false;
+
+async function toggleTabHighlight() {
+  await experimental().update("modernUI", classicTabs() ? undefined : false, Global);
+}
+
 async function pickKinds() {
   const cfg = vscode.workspace.getConfiguration(`${SECTION}.rainbowIdentifiers`);
   const kinds = new Set(cfg.get("kinds"));
@@ -218,6 +228,12 @@ function menuItems() {
       description: info ? surfaceLabel(info.variant) : "—",
       detail: `Normal, Dimmed or Paper (light) · applies to ${themeTarget() === Workspace ? "this project" : "all projects"}`,
     },
+    {
+      id: "tabs",
+      label: "$(window) Tab highlight",
+      description: classicTabs() ? "On (classic tabs)" : "Off",
+      detail: "Tints and underlines the active tab — switches to classic tabs, as VS Code's modern UI ignores theme tab colors",
+    },
     sep("Code"),
     { id: "brackets", label: "$(bracket) Brackets", description: modeLabel(cfg.get("brackets")) },
     { id: "indent", label: "$(list-tree) Indent guides", description: modeLabel(cfg.get("indentGuides")) },
@@ -252,6 +268,7 @@ async function run(id) {
     case "global": return pickInk(Global);
     case "surface": return pickSurface();
     case "pairGuides": return cyclePairGuides();
+    case "tabs": return toggleTabHighlight();
     case "brackets": return pickMode("brackets", "Brackets");
     case "indent": return pickMode("indentGuides", "Indent guides");
     case "rid": return rid.update("enabled", !rid.get("enabled"), Global);
@@ -311,6 +328,7 @@ function registerMenu(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand("riso.options", () => showMenu()),
     vscode.commands.registerCommand("riso.toggleDimmed", toggleDimmed),
+    vscode.commands.registerCommand("riso.toggleTabHighlight", toggleTabHighlight),
   );
   registerStatusBar(context);
 }
