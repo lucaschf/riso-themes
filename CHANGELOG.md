@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- The README covers the JetBrains plugin: the same themes for PyCharm and the
+  other JetBrains IDEs, with rainbow brackets and color by name for Python.
+
 ## [1.3.1] - 2026-10-03
 
 ### Added

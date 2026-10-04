@@ -7,7 +7,8 @@
 VS Code themes printed like a risograph: an ink on paper, a second ink, and
 nothing more. Eleven inks and a two-ink duotone, each on three papers — near
 black, dimmed and light — for 36 themes. Every text color is checked for
-contrast on every paper.
+contrast on every paper. Also for PyCharm and the other
+[JetBrains IDEs](#jetbrains-ides).
 
 ![The twelve Riso themes on the near-black paper](images/screenshots/inks.png)
 
@@ -153,6 +154,26 @@ several things in one go.
 | **Riso: Set Theme for This Workspace…** | give this project its own theme |
 | **Riso: Use Global Theme in This Workspace** | remove it |
 | **Riso: Remove All Riso Settings…** | reset every option and delete the colors Riso wrote, before uninstalling |
+
+## JetBrains IDEs
+
+![Riso Touge in PyCharm, with color by name and rainbow brackets](images/jetbrains/1-touge.png)
+
+The same 36 themes for PyCharm, IntelliJ IDEA and the other JetBrains IDEs
+(2024.3 or later), from the same palettes, with two extras:
+
+- **Rainbow brackets**, one color per nesting level, in any language.
+- **Color by name** for Python: parameters, locals, attributes, constants and
+  classes, each in the same color it gets in VS Code.
+
+Install **Riso Themes** from *Settings → Plugins → Marketplace*
+([plugin page](https://plugins.jetbrains.com/plugin/34768-riso-themes)), then
+pick a theme in *Settings → Appearance → Theme*; the editor colors follow it.
+Both extras work under any theme and can be turned off in *Settings →
+Appearance → Riso*. If another plugin also colors brackets, such as Rainbow
+Brackets, turn one of them off.
+
+![Riso Blue Paper in PyCharm](images/jetbrains/4-blue-paper.png)
 
 ## FAQ
 
