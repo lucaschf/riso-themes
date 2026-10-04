@@ -23,6 +23,22 @@
     extension</a>, generated from one source.</p>
   ]]></description>
 
+  <change-notes><![CDATA[
+    <p><b>0.1.2</b></p>
+    <ul>
+      <li>Color by name draws above other highlights, so plugins that color Python names
+      (such as VSCode Theme's annotator) no longer hide it.</li>
+    </ul>
+    <p><b>0.1.1</b></p>
+    <ul>
+      <li>Readable status bar on bright inks; the active editor tab is tinted with the ink.</li>
+    </ul>
+    <p><b>0.1.0</b></p>
+    <ul>
+      <li>First release: 36 themes, rainbow brackets and color by name for Python.</li>
+    </ul>
+  ]]></change-notes>
+
   <idea-version since-build="243"/>
   <depends>com.intellij.modules.platform</depends>
   <depends optional="true" config-file="riso-python.xml">com.intellij.modules.python</depends>
