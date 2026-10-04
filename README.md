@@ -222,8 +222,22 @@ when the `OVSX_PAT` secret exists — publishes to Open VSX too. It stops before
 publishing if the tag doesn't match `package.json` or the changelog has no
 section for the version.
 
-Repository secrets: `VSCE_PAT` (Azure DevOps token with Marketplace → Manage)
-and, optionally, `OVSX_PAT`. After changing a token, check it with **Actions →
+The JetBrains plugin in `jetbrains/` is released on its own tags. Bump
+`pluginVersion` in `jetbrains/gradle.properties`, add a `<p><b>x.y.z</b></p>`
+entry at the top of `<change-notes>` in `jetbrains/plugin.template.xml`, run
+`npm run build`, commit, then push a matching tag:
+
+    git tag jetbrains-v0.1.3
+    git push origin jetbrains-v0.1.3
+
+`.github/workflows/jetbrains-release.yml` then publishes it to the JetBrains
+Marketplace and creates a GitHub release with the plugin zip. It stops before
+publishing if the tag doesn't match `pluginVersion` or the change notes have no
+entry for the version.
+
+Repository secrets: `VSCE_PAT` (Azure DevOps token with Marketplace → Manage),
+`JETBRAINS_MARKETPLACE_TOKEN` (JetBrains Marketplace → My Tokens) and,
+optionally, `OVSX_PAT`. After changing a token, check it with **Actions →
 Verify Marketplace token → Run workflow**.
 
 ## License
