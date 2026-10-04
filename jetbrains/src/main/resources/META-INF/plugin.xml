@@ -2,7 +2,7 @@
 <idea-plugin>
   <id>lucascristovam.riso-themes</id>
   <name>Riso Themes</name>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
   <vendor url="https://github.com/lucaschf/riso-themes">Lucas Cristovam</vendor>
 
   <description><![CDATA[

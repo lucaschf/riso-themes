@@ -116,9 +116,8 @@ function editorScheme(theme, S, name) {
     "PY.PREDEFINED_USAGE": italic(p.self),
     "PY.SELF_PARAMETER": italic(p.self),
     // No foreground on what the plugin's color by name paints (parameters,
-    // keyword arguments, locals, class names): PyCharm highlights these on the
-    // same layer, and with two foregrounds there the IDE picks either one.
-    // Without the feature they fall back to the text color; params stay italic.
+    // keyword arguments, locals, class names): with the feature on they take
+    // its colors; off, they keep the text color and params stay italic.
     "PY.KEYWORD_ARGUMENT": { FONT_TYPE: ITALIC },
     "PY.PARAMETER": { FONT_TYPE: ITALIC },
     "PY.LOCAL_VARIABLE": {},

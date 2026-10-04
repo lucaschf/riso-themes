@@ -4,14 +4,18 @@ import com.intellij.codeInsight.daemon.impl.HighlightInfo
 import com.intellij.codeInsight.daemon.impl.HighlightInfoType
 import com.intellij.codeInsight.daemon.impl.HighlightVisitor
 import com.intellij.codeInsight.daemon.impl.analysis.HighlightInfoHolder
+import com.intellij.lang.annotation.HighlightSeverity
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors
 import com.intellij.openapi.editor.markup.TextAttributes
 import com.intellij.openapi.util.TextRange
 import com.intellij.psi.PsiFile
 import java.awt.Color
 
+// TEXT_ATTRIBUTES draws above the syntax layer, where PyCharm and other plugins
+// (VSCode Theme's annotator, for one) color the same names: on a shared layer
+// the IDE picks either foreground. Warnings, errors and selection still win.
 private val RISO_COLOR =
-    HighlightInfoType.HighlightInfoTypeImpl(HighlightInfoType.SYMBOL_TYPE_SEVERITY, DefaultLanguageHighlighterColors.CONSTANT)
+    HighlightInfoType.HighlightInfoTypeImpl(HighlightSeverity.TEXT_ATTRIBUTES, DefaultLanguageHighlighterColors.CONSTANT)
 
 /**
  * A highlighting pass that only recolors text: the IDE calls [visit] for every
