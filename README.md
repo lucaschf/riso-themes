@@ -238,7 +238,7 @@ entry for the version.
 Repository secrets: `VSCE_PAT` (Azure DevOps token with Marketplace → Manage),
 `JETBRAINS_MARKETPLACE_TOKEN` (JetBrains Marketplace → My Tokens) and,
 optionally, `OVSX_PAT`. After changing a token, check it with **Actions →
-Verify Marketplace token → Run workflow**.
+Verify Marketplace tokens → Run workflow**.
 
 ## License
 

@@ -1,7 +1,8 @@
-name: Verify Marketplace token
+name: Verify Marketplace tokens
 
-# Run by hand (Actions → Verify Marketplace token → Run workflow) after
-# changing the VSCE_PAT secret: checks it can publish, without publishing.
+# Run by hand (Actions → Verify Marketplace tokens → Run workflow) after
+# changing VSCE_PAT or JETBRAINS_MARKETPLACE_TOKEN: checks them without
+# publishing.
 on:
   workflow_dispatch:
 
@@ -33,3 +34,22 @@ jobs:
         run: npx --yes @vscode/vsce@4 verify-pat lucascristovam --pat "$(echo "$VSCE_PAT" | tr -d '[:space:]')"
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+  # The JetBrains token can only be tried by publishing, so this checks its
+  # shape: set, and without the whitespace a paste can add.
+  jetbrains:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect JETBRAINS_MARKETPLACE_TOKEN's shape
+        run: |
+          echo "length: ${#TOKEN}"
+          if [ -z "$TOKEN" ]; then
+            echo "::error::JETBRAINS_MARKETPLACE_TOKEN is empty. Copy the token, then run: Get-Clipboard | gh secret set JETBRAINS_MARKETPLACE_TOKEN --repo lucaschf/riso-themes"
+            exit 1
+          fi
+          case "$TOKEN" in
+            *[[:space:]]*) echo "::warning::JETBRAINS_MARKETPLACE_TOKEN contains whitespace or a line break — re-set it with just the token." ;;
+            *) echo "no whitespace" ;;
+          esac
+        env:
+          TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
